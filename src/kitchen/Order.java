@@ -17,7 +17,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Your order: " + dishes + " of" + tablet;
+        return "Your order: " + dishes + " of " + tablet;
     }
 
 }

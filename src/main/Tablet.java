@@ -3,25 +3,33 @@ package main;
 import kitchen.Order;
 
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Tablet {
+public class Tablet extends Observable {
     private final int number;
     private static Logger logger = Logger.getLogger(Tablet.class.getName());
+    private Observer observer;
 
     public Tablet(int number) {
         this.number = number;
     }
 
     //создает заказ из тех блюд, которые выберет пользователь
-    public void createOrder(){
-        Order order = null;
+    public Order createOrder(){
+        Order order;
         try {
             order = new Order(this);
+            ConsoleHelper.writeMessage(order.toString());
+            setChanged();
+            notifyObservers(order);
+            return order;
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
         }
+        return null;
     }
 
     @Override
