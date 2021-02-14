@@ -1,6 +1,6 @@
-package com.javarush.task.task27.task2712.kitchen;
+package kitchen;
 
-import com.javarush.task.task27.task2712.Tablet;
+import main.Tablet;
 
 import java.util.List;
 

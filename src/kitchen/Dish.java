@@ -1,4 +1,4 @@
-package com.javarush.task.task27.task2712.kitchen;
+package kitchen;
 
 import java.util.Arrays;
 
