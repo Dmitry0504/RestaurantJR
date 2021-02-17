@@ -1,5 +1,6 @@
 package main;
 
+import ad.AdvertisementManager;
 import kitchen.Order;
 
 import java.io.IOException;
@@ -26,6 +27,7 @@ public class Tablet extends Observable {
             if(order.isEmpty()) return null;
             setChanged();
             notifyObservers(order);
+            new AdvertisementManager(order.getTotalCookingTime() * 60).processVideos();
             return order;
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");

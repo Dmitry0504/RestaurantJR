@@ -13,6 +13,8 @@ public class Advertisement {
     private int hits;
     //продолжительность в секундах
     private int duration;
+    //стоимость одного показа
+    private long amountPerOneDisplaying = 0;
 
     public Advertisement(Object content, String name, long initialAmount, int hits, int duration) {
         this.content = content;
@@ -20,7 +22,18 @@ public class Advertisement {
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
+        if(hits != 0) amountPerOneDisplaying = initialAmount/hits;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public int getDuration() {
+        return duration;
+    }
+
+    public long getAmountPerOneDisplaying() {
+        return amountPerOneDisplaying;
+    }
 }
