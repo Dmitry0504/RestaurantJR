@@ -1,8 +1,5 @@
 package ad;
 
-
-import main.ConsoleHelper;
-
 /*
  у каждого планшета будет свой объект менеджера, который будет
  подбирать оптимальный набор роликов и их последовательность для каждого заказа.
@@ -17,7 +14,9 @@ public class AdvertisementManager {
     }
 
     public void processVideos(){
-        ConsoleHelper.writeMessage("calling processVideos method");
+        if(storage.list().isEmpty()){
+            throw new NoVideoAvailableException();
+        }
     }
 
 }
