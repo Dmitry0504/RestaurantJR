@@ -22,7 +22,11 @@ public class Advertisement {
         this.initialAmount = initialAmount;
         this.hits = hits;
         this.duration = duration;
-        if(hits != 0) amountPerOneDisplaying = initialAmount/hits;
+        if(hits > 0) amountPerOneDisplaying = initialAmount/hits;
+    }
+
+    public int getHits() {
+        return hits;
     }
 
     public String getName() {
