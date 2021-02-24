@@ -1,7 +1,7 @@
-package com.javarush.task.task27.task2712.statistic;
+package statistic;
 
 
-import com.javarush.task.task27.task2712.statistic.event.EventDataRow;
+import statistic.event.EventDataRow;
 
 //будет регистрировать события в хранилище
 public class StatisticManager {
