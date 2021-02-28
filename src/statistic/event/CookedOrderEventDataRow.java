@@ -19,4 +19,9 @@ public class CookedOrderEventDataRow implements EventDataRow {
         this.cookingTimeSeconds = cookingTimeSeconds;
         this.cookingDishes = cookingDishes;
     }
+
+    @Override
+    public EventType getType() {
+        return EventType.COOKED_ORDER;
+    }
 }

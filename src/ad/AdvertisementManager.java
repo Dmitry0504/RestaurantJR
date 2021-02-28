@@ -1,6 +1,8 @@
 package ad;
 
 import main.ConsoleHelper;
+import statistic.StatisticManager;
+import statistic.event.VideoSelectedEventDataRow;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -55,6 +57,16 @@ public class AdvertisementManager {
             }
             duration = 0;
         }
+
+        long totalAmount = 0;
+        int totalDuration = 0;
+        for(Advertisement a: resList){
+            totalAmount += a.getAmountPerOneDisplaying();
+            totalDuration += a.getDuration();
+        }
+
+        StatisticManager.getInstance().register(new VideoSelectedEventDataRow(resList, totalAmount, totalDuration));
+
         //выводим рекламу в консоль
         //точнее какие ролики будут показаны
         for(Advertisement a: resList){

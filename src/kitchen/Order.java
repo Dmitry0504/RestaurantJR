@@ -25,6 +25,10 @@ public class Order {
         return time;
     }
 
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
     public boolean isEmpty(){
         return dishes.isEmpty();
     }
